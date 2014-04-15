@@ -15,9 +15,16 @@ var Item = mongoose.model("Item", ItemSchema);
 var root = new Item({ name : ""});
 var home = new Item({ name : "home"});
 var docs = new Item({ name : "docs"});
-var docs = new Item({ name : "docs"});
 
-Item.remove(function(){
+
+console.log(root.save());
+
+
+
+
+
+
+/*Item.remove(function(){
   root.save(function(){
 
     root.attach(home, function(err, node){
@@ -26,7 +33,7 @@ Item.remove(function(){
         
         subnode.attach(new Item({ name : "docs"}), function(err, subsubnode){
           
-          root.descendants (function(err, data){
+          subsubnode.ancestors (function(err, data){
             console.log (data);
           });
 
@@ -35,5 +42,5 @@ Item.remove(function(){
       });
     });
   });  
-});
+});*/
 
